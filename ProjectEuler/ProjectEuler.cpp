@@ -13,8 +13,12 @@
 //#include "Problem9.h"
 //#include "Problem10.h"
 #include "Timer.h"
+#include "TimerBlock.h"
 
 #include <map>
+#include <numeric>
+#include <string>
+#include <unordered_map>
 
 using namespace std;
 
@@ -22,18 +26,16 @@ using namespace std;
 
 int main()
 {
-	int lines;
-	cin >> lines;
-	for (int i = 0; i < lines; i++)
-	{
-		long long nb;
-		cin >> nb;
-		//cout << Problem3::Solve(nb) << endl;
+	int T;
+	cin >> T;
 
-		Timer::TimeAndOutput([nb]() {		
-			//cout << Solve(nb) << endl;
-		});
+	for (int i = 0; i < T; i++)
+	{
+		int N;
+		cin >> N;
+		TimerBlock t("Solve");
+		//cout << Solve(N) << endl;
 	}
-	
+
 	return 0;
 }

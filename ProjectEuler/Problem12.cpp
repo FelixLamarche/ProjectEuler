@@ -5,7 +5,7 @@
 
 int Problem12::GetNbDivider(long long N)
 {
-	const long long square = static_cast<long long>(sqrt(N));
+	const long long square = static_cast<long long>(sqrtl(static_cast<long double>(N)));
 
 	int dividers = 2; // 1 And N
 	for (long long i = 2; i <= square; i++)
@@ -49,7 +49,7 @@ long long Problem12::Solve(int N)
 
 		// We count in ascending order, the first dividerCount found
 		// is always the lowest number
-		int prevDivider = dividerCount;
+		long long prevDivider = dividerCount;
 		while (!divisorCountToNbAndSum.contains(prevDivider))
 		{
 			divisorCountToNbAndSum[prevDivider] = { nb, sum };
