@@ -7,7 +7,7 @@
 
 class TimerBlock {
 public:
-	TimerBlock(const std::string& name)
+	TimerBlock(const std::string& name = "TimerBlock")
 		: _name(name), _start(std::chrono::high_resolution_clock::now())
 	{ }
 		

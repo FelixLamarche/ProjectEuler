@@ -1,5 +1,5 @@
 #include "Problem10.h"
-#include "Sieve.h"
+#include "../ProjectEuler/Sieve.h"
 
 #include <map>
 #include <iterator>

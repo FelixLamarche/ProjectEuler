@@ -1,11 +1,8 @@
 ﻿// ProjectEuler.cpp : Defines the entry point for the application.
 //
+#include "Problem3.h"
 
-#include "ProjectEuler.h"
-
-#include <map>
-#include <numeric>
-#include <string>
+#include <iostream>
 
 int main()
 {
@@ -16,6 +13,7 @@ int main()
 	{
 		long long N;
 		std::cin >> N;
+		std::cout << Problem3::Solve(N) << std::endl;
 	}
 
 	return 0;

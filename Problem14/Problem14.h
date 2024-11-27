@@ -2,5 +2,5 @@
 
 class Problem14 {
 public:
-	static int Solve(int N);
+	static long long Solve(long long N);
 };
