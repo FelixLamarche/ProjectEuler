@@ -32,7 +32,7 @@ static bool IsTrioPandigital(int a, int b, int c)
 
 static int Solve()
 {
-	constexpr int maxProduct = 100'000'000'0;
+	constexpr int maxProduct = 100'000;
 
 	int sumOfPandigitalProducts = 0;
 	for (int product = 1; product < maxProduct; ++product)
