@@ -26,7 +26,7 @@ static bool IsPentagonalNumber(int64 nb)
 
 static int64 Solve()
 {
-	constexpr int64 upperBound = 1'000'000;
+	constexpr int64 upperBound = 2'500;
 
 	int64 difference = LLONG_MAX;
 
