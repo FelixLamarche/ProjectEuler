@@ -49,3 +49,20 @@ foreach(subdir ${subdirs})
         endif()
     endif()
 endforeach()
+
+
+# Tests
+
+set(executableTargetName Unsigned128Tests)
+add_executable(${executableTargetName} "Utils/Unsigned128.h" "Utils/Unsigned128Test.cpp")
+# Set the output directory for the executable
+set_target_properties(${executableTargetName} PROPERTIES
+	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/${executableTargetName}
+)
+
+# Optional: Set include directories if needed (helps with IDE support)
+target_include_directories(${executableTargetName} PRIVATE ${executableTargetName})
+
+if (CMAKE_VERSION VERSION_GREATER 3.12)
+  set_property(TARGET ${executableTargetName} PROPERTY CXX_STANDARD 20)
+endif() 
