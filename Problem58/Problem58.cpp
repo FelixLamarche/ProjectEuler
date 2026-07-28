@@ -1,6 +1,4 @@
 // Problem 58: Spiral Primes
-#include "../Utils/UnsignedBigInt.h"
-
 #include <format>
 #include <iostream>
 #include <vector>
