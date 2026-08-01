@@ -46,10 +46,8 @@ static u64 Solve()
 			const uBigInt power = Power(nb, exponent);
 			const u32 digitsCount = DigitsCount(power);
 
-
 			if (digitsCount == exponent)
 			{
-
 				std::cout << nb.ToString() << "^" << exponent << " = " << power.ToString() << std::endl;
 				solCount++;
 			}
