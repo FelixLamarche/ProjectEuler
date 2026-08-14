@@ -81,7 +81,7 @@ int main()
 {
 	constexpr u32 upperBound = 10'000'000;
 	const u32 sol = Solve(upperBound);
-	std::cout << "Solution 69: " << sol << std::endl;
+	std::cout << "Solution 70: " << sol << std::endl;
 
 	return 0;
 }
