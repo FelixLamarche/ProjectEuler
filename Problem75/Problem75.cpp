@@ -23,20 +23,6 @@ static u32 Solve(u32 upperBound)
 {
 	std::vector<u32> rightTriangleCounts(upperBound + 1, 0);
 
-	//for (u64 b = 2; b < upperBound / 2; ++b)
-	//{
-	//	const u64 b2 = b * b;
-	//	for (u64 a = 1; a < b; ++a)
-	//	{
-	//		const u64 c = std::sqrt(b2 + a * a);
-	//		if (a + b + c > upperBound)
-	//			break;
-
-	//		if (c * c == b2 + a * a)
-	//			rightTriangleCounts[a + b + c]++;
-	//	}
-	//}
-
 	//Euclid's formula to generate pythagorean triplet:
 	// a = m^2 - n^2, b = 2mn c = m^2 + n^2
 	// where m > n > 0
