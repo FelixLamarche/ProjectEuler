@@ -54,7 +54,7 @@ public:
 		: bits(other.bits)
 	{}
 
-	constexpr UnsignedBigInt(UnsignedBigInt&& other)
+	constexpr UnsignedBigInt(UnsignedBigInt&& other) noexcept
 		: bits(std::move(other.bits))
 	{}
 
@@ -64,7 +64,7 @@ public:
 		return *this;
 	}
 
-	constexpr UnsignedBigInt& operator=(UnsignedBigInt&& other)
+	constexpr UnsignedBigInt& operator=(UnsignedBigInt&& other) noexcept
 	{
 		bits = std::move(other.bits);
 		return *this;
