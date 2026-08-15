@@ -66,7 +66,7 @@ int main()
 {
 	const u32 primeSummationCountBound = 5000;
 	const u32 sol = Solve(primeSummationCountBound);
-	std::cout << "Solution 76: " << sol << std::endl;
+	std::cout << "Solution 77: " << sol << std::endl;
 
 	return 0;
 }
