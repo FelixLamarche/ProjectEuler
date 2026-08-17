@@ -210,7 +210,7 @@ static bool DoesHand1BeatHand2(const Hand& hand1, const Hand& hand2)
 
 static int Solve()
 {
-	constexpr const char* fileName = "0054_poker.txt";
+	constexpr const char* fileName = "resources/0054_poker.txt";
 	if (!std::filesystem::exists(fileName))
 	{
 		std::cerr << "Could not find file: " << fileName << std::endl;

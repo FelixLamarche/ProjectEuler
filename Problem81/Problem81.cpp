@@ -87,7 +87,7 @@ static u64 Solve(const char* fileName)
 
 int main()
 {
-	constexpr const char* fileName = "0081_matrix.txt";
+	constexpr const char* fileName = "resources/0081_matrix.txt";
 	const int sol = Solve(fileName);
 	std::cout << "Solution 81: " << sol << std::endl;
 

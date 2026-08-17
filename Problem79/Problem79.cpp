@@ -116,7 +116,7 @@ static std::string Solve(const char* fileName)
 
 int main()
 {
-	constexpr const char* fileName = "0079_keylog.txt";
+	constexpr const char* fileName = "resources/0079_keylog.txt";
 	const std::string sol = Solve(fileName);
 	std::cout << "Solution 79: " << sol << std::endl;
 

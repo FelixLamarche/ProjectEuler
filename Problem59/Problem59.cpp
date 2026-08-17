@@ -12,7 +12,7 @@ using u32 = unsigned long;
 static u32 Solve()
 {
 	std::ifstream file;
-	file.open("0059_cipher.txt");
+	file.open("resources/0059_cipher.txt");
 
 	if (!file.is_open())
 	{

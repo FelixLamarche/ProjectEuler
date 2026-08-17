@@ -18,7 +18,7 @@ using u64 = unsigned long long;
 static void ReadFile(std::vector<std::vector<u32>>& rowsOfNbs)
 {
 	std::ifstream file;
-	file.open("0067_triangle.txt");
+	file.open("resources/0067_triangle.txt");
 
 	if (!file.is_open())
 	{

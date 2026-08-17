@@ -14,6 +14,7 @@ project ("ProjectEuler")
 # Include sub-projects.
 file(GLOB subdirs RELATIVE ${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/*)
 set(PATTERN "Problem")
+set(RESOURCES_DIR_NAME "resources")
 
 # Loop over each subdirectory
 foreach(subdir ${subdirs})
@@ -41,9 +42,18 @@ foreach(subdir ${subdirs})
             RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/${dir_name}
         )
 
+        # If a resources folder exists in this subdir, copy it next to the built executable
+        if(EXISTS ${CMAKE_SOURCE_DIR}/${subdir}/${RESOURCES_DIR_NAME})
+            add_custom_command(TARGET ${dir_name} POST_BUILD
+                COMMAND ${CMAKE_COMMAND} -E copy_directory
+                        ${CMAKE_SOURCE_DIR}/${subdir}/${RESOURCES_DIR_NAME}
+                        $<TARGET_FILE_DIR:${dir_name}>/${RESOURCES_DIR_NAME}
+                COMMENT "Copying ${RESOURCES_DIR_NAME} for ${dir_name}"
+            )
+        endif()
+
         # Optional: Set include directories if needed (helps with IDE support)
         target_include_directories(${dir_name} PRIVATE ${dir_name})
-
         if (CMAKE_VERSION VERSION_GREATER 3.12)
           set_property(TARGET ${dir_name} PROPERTY CXX_STANDARD 20)
         endif()

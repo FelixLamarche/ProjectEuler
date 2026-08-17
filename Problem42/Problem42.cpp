@@ -45,7 +45,7 @@ static int WordToValue(const char* word)
 
 static int Solve()
 {
-	constexpr const char* wordsPath = "words.txt";
+	constexpr const char* wordsPath = "resources/words.txt";
 
 	if (!std::filesystem::exists(wordsPath))
 	{
