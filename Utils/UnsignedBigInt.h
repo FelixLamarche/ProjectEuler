@@ -528,6 +528,7 @@ public:
 		if (rhs > *this)
 		{
 			*this = 0;
+			this->Optimize();
 			return *this;
 		}
 
@@ -547,7 +548,7 @@ public:
 		{
 			UnsignedBigInt resultIteration = 1;
 
-			const uint32 baseShift = bits.size() >= 2 ? bits.size() - 2 : 0;
+			const uint32 baseShift = bits.size() > rhs.bits.size() ? bits.size() - rhs.bits.size() - 1 : 0;
 			UnsignedBigInt divider = rhs << nbBitsPerChunk * baseShift;
 			resultIteration.ShiftLeft(nbBitsPerChunk * baseShift);
 
@@ -622,7 +623,7 @@ public:
 		nb = *this;
 		for (int digitIdx = nbDigits - 1; digitIdx >= 0; --digitIdx)
 		{
-			const uint32 digit = static_cast<uint32>(nb.bits[0] % 10);
+			const uint32 digit = static_cast<uint32>(nb % 10);
 			s.at(digitIdx) = static_cast<unsigned char>(digit) + '0';
 			nb /= 10;
 		}
