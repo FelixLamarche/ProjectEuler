@@ -1,7 +1,7 @@
 ﻿# CMakeList.txt : Top-level CMake project file, do global configuration
 # and include sub-projects here.
 #
-cmake_minimum_required (VERSION 3.8)
+cmake_minimum_required (VERSION 3.12)
 
 # Enable Hot Reload for MSVC compilers if supported.
 if (POLICY CMP0141)
@@ -14,6 +14,7 @@ project ("ProjectEuler")
 # Include sub-projects.
 file(GLOB subdirs RELATIVE ${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/*)
 set(PATTERN "Problem")
+set(CXX_VERSION_PROPERTY 23)
 set(RESOURCES_DIR_NAME "resources")
 
 # Loop over each subdirectory
@@ -54,9 +55,7 @@ foreach(subdir ${subdirs})
 
         # Optional: Set include directories if needed (helps with IDE support)
         target_include_directories(${dir_name} PRIVATE ${dir_name})
-        if (CMAKE_VERSION VERSION_GREATER 3.12)
-          set_property(TARGET ${dir_name} PROPERTY CXX_STANDARD 20)
-        endif()
+        set_property(TARGET ${dir_name} PROPERTY CXX_STANDARD ${CXX_VERSION_PROPERTY})
     endif()
 endforeach()
 
@@ -69,10 +68,6 @@ add_executable(${executableTargetName} "Utils/Unsigned128.h" "Utils/Unsigned128T
 set_target_properties(${executableTargetName} PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin/${executableTargetName}
 )
-
 # Optional: Set include directories if needed (helps with IDE support)
 target_include_directories(${executableTargetName} PRIVATE ${executableTargetName})
-
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET ${executableTargetName} PROPERTY CXX_STANDARD 20)
-endif() 
+set_property(TARGET ${executableTargetName} PROPERTY CXX_STANDARD ${CXX_VERSION_PROPERTY})
