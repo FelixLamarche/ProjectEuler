@@ -55,10 +55,10 @@ static u64 Solve(const int maxCoord)
 		p1.y = 0;
 		for (; p1.y <= maxCoord; ++p1.y)
 		{
-			p2.x = 0;
+			p2.x = p1.x;
 			for (; p2.x <= maxCoord; ++p2.x)
 			{
-				p2.y = 0;
+				p2.y = p1.x == p2.x ? p1.y + 1 : 0;
 				for (; p2.y <= maxCoord; ++p2.y)
 				{
 					if (FormsRightTriangle(p0, p1, p2))
@@ -68,8 +68,7 @@ static u64 Solve(const int maxCoord)
 		}
 	}
 
-	// we count permutations, not combinations, so divide by 2
-	return rightTriangleCount / 2;
+	return rightTriangleCount;
 }
 
 int main()
